@@ -9,21 +9,21 @@ $UserArray[] = array(
    "firstname" => "Diypa",
    "lastname" => "Parwana",
    "username" => "diypa",
-   "password" => "dynamicsEngx"
+   "password" => '$2y$10$ovctuw7KN8TDck8xg0zGqeHCBteQvwjQk7el6p2yWPNK9XCxuPBeu'
 );
 
 $UserArray[] = array(
    "firstname" => "Borg",
    "lastname" => "Pickard",
    "username" => "UCCS",
-   "password" => "cube"
+   "password" => '$2y$10$ovctuw7KN8TDck8xg0zGqeHCBteQvwjQk7el6p2yWPNK9XCxuPBeu'
 );
 
 $UserArray[]= array(
    "firstname" => "Nilix",
    "lastname" => "Voyager",
    "username" => "nilix",
-   "password" => "cube"
+   "password" => '$2y$10$ovctuw7KN8TDck8xg0zGqeHCBteQvwjQk7el6p2yWPNK9XCxuPBeu'
 
 
 );
@@ -34,7 +34,8 @@ $UserArray[]= array(
 function whoToBeFound(string $user, string $password, array $UserArray) {
 for($x=0; $x < count($UserArray); ++$x) {
 
-if($UserArray[$x]['username'] ===  $user && $UserArray[$x]['password'] ===  $password) {
+
+if($UserArray[$x]['username'] ===  $user && password_verify($password, $UserArray[$x]['password'])) {
     echo 'This user is found... ';
     echo "Username:  {$UserArray[$x]['username']}   ";
     echo "Password:  {$UserArray[$x]['password']}   ";
@@ -44,7 +45,6 @@ if($UserArray[$x]['username'] ===  $user && $UserArray[$x]['password'] ===  $pas
 
  }
 
-
- whoToBeFound('UCCS','cube',$UserArray);
-
+ whoToBeFound('UCCS','dynamics',$UserArray);
+ 
  ?>
