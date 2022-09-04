@@ -3,10 +3,13 @@
 //@ Associative array
 //@ Experiment
 // Creating an array of users
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+  ini_set('display_errors', 1);
+  ini_set('display_startup_errors', 1);
+  error_reporting(E_ALL);
+
   class Users{
+    
+    // This public metod will return the array
     function usersList() {
     $UserArray = [];
     $UserArray[] = array(
@@ -46,4 +49,5 @@ error_reporting(E_ALL);
 
 $ob = new Users();
 $ob->whoToBeFound('UCCS','dynamics',$ob->usersList());
+// And now it is time to eat pizza...
 ?>
